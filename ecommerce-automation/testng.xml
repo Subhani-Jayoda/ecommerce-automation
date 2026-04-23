@@ -1,0 +1,50 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!--
+    TestNG Suite Configuration
+    E-Commerce Automation - Selenium + Java + TestNG + POM
+-->
+<suite name="E-Commerce Automation Suite" verbose="1" thread-count="1">
+
+    <!-- Attach our custom listener for Extent Reports + Screenshots -->
+    <listeners>
+        <listener class-name="listeners.TestListener"/>
+    </listeners>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         SMOKE TEST - Run the end-to-end critical path first
+         ══════════════════════════════════════════════════════════════ -->
+    <test name="Smoke Tests">
+        <classes>
+            <class name="tests.E2ETest"/>
+        </classes>
+    </test>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         REGRESSION - All functional test cases
+         ══════════════════════════════════════════════════════════════ -->
+    <test name="Login Tests">
+        <classes>
+            <class name="tests.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Product Tests">
+        <classes>
+            <class name="tests.ProductTest"/>
+        </classes>
+    </test>
+
+    <test name="Cart Tests">
+        <classes>
+            <class name="tests.CartTest"/>
+        </classes>
+    </test>
+
+    <test name="Checkout Tests">
+        <classes>
+            <class name="tests.CheckoutTest"/>
+        </classes>
+    </test>
+
+</suite>
